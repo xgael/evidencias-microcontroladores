@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Xólotl Gael Chávez Zamora",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "led_r", "top": -140, "left": 40, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led_a", "top": -140, "left": 110, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "led_v", "top": -140, "left": 180, "attrs": { "color": "green" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -70, "left": 40, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": -70, "left": 110, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r3", "top": -70, "left": 180, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "uno:2", "r1:1", "red", [ "v-20" ] ],
+    [ "r1:2", "led_r:A", "red", [] ],
+    [ "led_r:C", "uno:GND.1", "black", [ "v10" ] ],
+    [ "uno:3", "r2:1", "gold", [ "v-30" ] ],
+    [ "r2:2", "led_a:A", "gold", [] ],
+    [ "led_a:C", "uno:GND.1", "black", [ "v10" ] ],
+    [ "uno:4", "r3:1", "green", [ "v-40" ] ],
+    [ "r3:2", "led_v:A", "green", [] ],
+    [ "led_v:C", "uno:GND.1", "black", [ "v10" ] ]
+  ]
+}

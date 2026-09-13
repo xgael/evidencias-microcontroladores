@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Xólotl Gael Chávez Zamora",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -150,
+      "left": 250,
+      "attrs": { "temperature": "24" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 60,
+      "left": 320,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led_v", "top": 280, "left": -160, "attrs": { "color": "green", "label": "Normal" } },
+    { "type": "wokwi-led", "id": "led_a", "top": 280, "left": -90, "attrs": { "color": "yellow", "label": "Advertencia" } },
+    { "type": "wokwi-led", "id": "led_r", "top": 280, "left": -20, "attrs": { "color": "red", "label": "Alarma" } },
+    { "type": "wokwi-led", "id": "led_b", "top": 280, "left": 60, "attrs": { "color": "blue", "label": "Remoto (web)" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 230, "left": -150, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": 230, "left": -80, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r3", "top": 230, "left": -10, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r4", "top": 230, "left": 70, "attrs": { "value": "220" } },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": 260, "left": 180, "attrs": { "volume": "0.1" } },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 270, "left": 280, "attrs": { "color": "grey", "label": "Silenciar" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+
+    [ "ntc1:VCC", "esp:3V3", "red", [ "h-20" ] ],
+    [ "ntc1:GND", "esp:GND.1", "black", [ "h-30" ] ],
+    [ "ntc1:OUT", "esp:34", "gold", [ "h-40" ] ],
+
+    [ "ldr1:VCC", "esp:3V3", "red", [ "h-50" ] ],
+    [ "ldr1:GND", "esp:GND.1", "black", [ "h-60" ] ],
+    [ "ldr1:AO", "esp:35", "orange", [ "h-70" ] ],
+
+    [ "esp:25", "r1:1", "green", [ "v20" ] ],
+    [ "r1:2", "led_v:A", "green", [] ],
+    [ "led_v:C", "esp:GND.2", "black", [ "v30" ] ],
+
+    [ "esp:26", "r2:1", "yellow", [ "v30" ] ],
+    [ "r2:2", "led_a:A", "yellow", [] ],
+    [ "led_a:C", "esp:GND.2", "black", [ "v30" ] ],
+
+    [ "esp:27", "r3:1", "red", [ "v40" ] ],
+    [ "r3:2", "led_r:A", "red", [] ],
+    [ "led_r:C", "esp:GND.2", "black", [ "v30" ] ],
+
+    [ "esp:14", "r4:1", "blue", [ "v50" ] ],
+    [ "r4:2", "led_b:A", "blue", [] ],
+    [ "led_b:C", "esp:GND.2", "black", [ "v30" ] ],
+
+    [ "esp:18", "bz1:2", "magenta", [ "v60" ] ],
+    [ "bz1:1", "esp:GND.2", "black", [ "v20" ] ],
+
+    [ "esp:19", "btn1:1.l", "cyan", [ "v70" ] ],
+    [ "btn1:2.l", "esp:GND.2", "black", [ "v20" ] ]
+  ]
+}
