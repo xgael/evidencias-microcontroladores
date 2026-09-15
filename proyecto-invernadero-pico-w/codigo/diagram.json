@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "author": "Xólotl Gael Chávez Zamora",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": {
+        "env": "micropython-20231005-v1.21.0"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_v",
+      "top": 150,
+      "left": -150,
+      "attrs": {
+        "color": "green",
+        "label": "Aceptable"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_r",
+      "top": 150,
+      "left": -90,
+      "attrs": {
+        "color": "red",
+        "label": "Alerta"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_a",
+      "top": 150,
+      "left": -30,
+      "attrs": {
+        "color": "blue",
+        "label": "WiFi"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 110,
+      "left": -140,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 110,
+      "left": -80,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 110,
+      "left": -20,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "board-bmp180",
+      "id": "bmp1",
+      "top": -100,
+      "left": -160,
+      "attrs": {
+        "temperature": "24",
+        "pressure": "101200"
+      }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -180,
+      "left": -60,
+      "attrs": {
+        "temperature": "24",
+        "humidity": "55"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:GP13",
+      "r1:1",
+      "green",
+      [
+        "v20"
+      ]
+    ],
+    [
+      "r1:2",
+      "led_v:A",
+      "green",
+      []
+    ],
+    [
+      "led_v:C",
+      "pico:GND.6",
+      "black",
+      [
+        "v20"
+      ]
+    ],
+    [
+      "pico:GP14",
+      "r2:1",
+      "red",
+      [
+        "v30"
+      ]
+    ],
+    [
+      "r2:2",
+      "led_r:A",
+      "red",
+      []
+    ],
+    [
+      "led_r:C",
+      "pico:GND.6",
+      "black",
+      [
+        "v20"
+      ]
+    ],
+    [
+      "pico:GP15",
+      "r3:1",
+      "blue",
+      [
+        "v40"
+      ]
+    ],
+    [
+      "r3:2",
+      "led_a:A",
+      "blue",
+      []
+    ],
+    [
+      "led_a:C",
+      "pico:GND.6",
+      "black",
+      [
+        "v20"
+      ]
+    ],
+    [
+      "bmp1:SDA",
+      "pico:GP0",
+      "gold",
+      [
+        "h-20"
+      ]
+    ],
+    [
+      "bmp1:SCL",
+      "pico:GP1",
+      "orange",
+      [
+        "h-30"
+      ]
+    ],
+    [
+      "bmp1:VCC",
+      "pico:3V3",
+      "red",
+      [
+        "h-40"
+      ]
+    ],
+    [
+      "bmp1:GND",
+      "pico:GND.2",
+      "black",
+      [
+        "h-50"
+      ]
+    ],
+    [
+      "dht1:SDA",
+      "pico:GP16",
+      "cyan",
+      [
+        "h-20"
+      ]
+    ],
+    [
+      "dht1:VCC",
+      "pico:3V3",
+      "red",
+      [
+        "h-30"
+      ]
+    ],
+    [
+      "dht1:GND",
+      "pico:GND.5",
+      "black",
+      [
+        "h-40"
+      ]
+    ]
+  ]
+}

@@ -22,6 +22,19 @@ con alarma, y expone monitoreo + control por un **servidor web embebido** (puert
 - **Actuador remoto:** LED azul (GPIO14) controlado únicamente desde el navegador.
 - **Servidor web:** rutas `/`, `/data` (JSON), `/led`, `/umbral`, `/silenciar`.
 
+## 🌱 Invernadero — Monitoreo Ambiental IoT (Raspberry Pi Pico W)
+
+**Raspberry Pi Pico W + BME280** (temperatura, humedad, presión) en **MicroPython**, con
+clasificación por rangos (aceptable / sospechoso / alerta), **LEDs de alerta** (verde /
+amarillo / rojo) y **dashboard web** servido por el propio Pico (base elegida: servidor web).
+
+| Recurso | Ubicación |
+|---|---|
+| 🎬 Video de demostración (0:50) | [`proyecto-invernadero-pico-w/video/`](proyecto-invernadero-pico-w/video/Invernadero_PicoW_Demo.mp4) |
+| 💻 Código (main.py + circuito Wokwi) | [`proyecto-invernadero-pico-w/codigo/`](proyecto-invernadero-pico-w/codigo) |
+| 📐 Diagramas (flujo, bloques) + mockup UI | [`proyecto-invernadero-pico-w/diagramas/`](proyecto-invernadero-pico-w/diagramas) |
+| 📄 Detalle del proyecto | [`proyecto-invernadero-pico-w/README.md`](proyecto-invernadero-pico-w/README.md) |
+
 ## 🧪 Proyectos guiados
 - [`01-blink`](proyectos-guiados/01-blink) — parpadeo de LED.
 - [`02-semaforo`](proyectos-guiados/02-semaforo) — semáforo con temporización.
