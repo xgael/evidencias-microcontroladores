@@ -1,7 +1,6 @@
 # ============================================================
 #  Monitoreo Ambiental IoT para Invernadero — Raspberry Pi Pico W
 #  MicroPython · Sensor BME280 (temperatura, humedad, presión)
-#  Autor: Xólotl Gael Chávez Zamora
 # ============================================================
 #  Base elegida: versión con SERVIDOR WEB (opción A del módulo).
 #

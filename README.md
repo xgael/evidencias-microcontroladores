@@ -1,7 +1,6 @@
 # Evidencias — Curso de Microcontroladores
 
 Repositorio **público** con las evidencias del curso: proyectos guiados y proyecto final.
-Autor: **Xólotl Gael Chávez Zamora**.
 
 ## 🎯 Proyecto Final — Estación de Monitoreo Ambiental IoT (ESP32)
 
