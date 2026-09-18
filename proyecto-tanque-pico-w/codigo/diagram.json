@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": 0, "left": 0,
+      "attrs": { "env": "micropython-20231005-v1.21.0" } },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -140, "left": -60,
+      "attrs": { "temperature": "24", "humidity": "55" } },
+    { "type": "wokwi-hc-sr04", "id": "ultra1", "top": 40, "left": 140,
+      "attrs": { "distance": "25" } },
+    { "type": "wokwi-rgb-led", "id": "rgb1", "top": 140, "left": -210,
+      "attrs": { "common": "cathode" } },
+    { "type": "wokwi-led", "id": "led_tanque", "top": 150, "left": -90,
+      "attrs": { "color": "red", "label": "Tanque bajo" } },
+    { "type": "wokwi-led", "id": "led_bomba", "top": 150, "left": -30,
+      "attrs": { "color": "yellow", "label": "Bomba" } },
+    { "type": "wokwi-resistor", "id": "r_r", "top": 100, "left": -240, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_g", "top": 100, "left": -190, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_b", "top": 100, "left": -140, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_t", "top": 110, "left": -80, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_p", "top": 110, "left": -20, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "dht1:SDA", "pico:GP16", "cyan", [ "h-20" ] ],
+    [ "dht1:VCC", "pico:3V3", "red", [ "h-30" ] ],
+    [ "dht1:GND", "pico:GND.5", "black", [ "h-40" ] ],
+
+    [ "ultra1:TRIG", "pico:GP17", "gold", [ "h-20" ] ],
+    [ "ultra1:ECHO", "pico:GP18", "orange", [ "h-30" ] ],
+    [ "ultra1:VCC", "pico:3V3", "red", [ "h-40" ] ],
+    [ "ultra1:GND", "pico:GND.2", "black", [ "h-50" ] ],
+
+    [ "pico:GP11", "r_r:1", "red", [ "v20" ] ],
+    [ "r_r:2", "rgb1:R", "red", [] ],
+    [ "pico:GP12", "r_g:1", "green", [ "v30" ] ],
+    [ "r_g:2", "rgb1:G", "green", [] ],
+    [ "pico:GP13", "r_b:1", "blue", [ "v40" ] ],
+    [ "r_b:2", "rgb1:B", "blue", [] ],
+    [ "rgb1:COM", "pico:GND.6", "black", [ "v20" ] ],
+
+    [ "pico:GP14", "r_t:1", "red", [ "v30" ] ],
+    [ "r_t:2", "led_tanque:A", "red", [] ],
+    [ "led_tanque:C", "pico:GND.6", "black", [ "v20" ] ],
+
+    [ "pico:GP15", "r_p:1", "yellow", [ "v40" ] ],
+    [ "r_p:2", "led_bomba:A", "yellow", [] ],
+    [ "led_bomba:C", "pico:GND.6", "black", [ "v20" ] ]
+  ]
+}

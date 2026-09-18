@@ -1,0 +1,9 @@
+{ "version": 1, "editor": "wokwi", "parts": [
+  { "type": "board-pi-pico-w", "id": "pico", "top": 0, "left": 0, "attrs": { "env": "micropython-20231005-v1.21.0" } },
+  { "type": "wokwi-potentiometer", "id": "pot1", "top": -130, "left": -60, "attrs": {} },
+  { "type": "wokwi-servo", "id": "srv1", "top": -110, "left": 160, "attrs": {} } ],
+ "connections": [
+  [ "pot1:SIG", "pico:GP26", "violet", [ "h-20" ] ], [ "pot1:VCC", "pico:3V3", "red", [ "h-30" ] ],
+  [ "pot1:GND", "pico:GND.5", "black", [ "h-40" ] ],
+  [ "srv1:PWM", "pico:GP15", "orange", [ "h-20" ] ], [ "srv1:V+", "pico:VBUS", "red", [ "h-30" ] ],
+  [ "srv1:GND", "pico:GND.2", "black", [ "h-40" ] ] ] }

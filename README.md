@@ -34,6 +34,19 @@ amarillo / rojo) y **dashboard web** servido por el propio Pico (base elegida: s
 | 📐 Diagramas (flujo, bloques) + mockup UI | [`proyecto-invernadero-pico-w/diagramas/`](proyecto-invernadero-pico-w/diagramas) |
 | 📄 Detalle del proyecto | [`proyecto-invernadero-pico-w/README.md`](proyecto-invernadero-pico-w/README.md) |
 
+## 💧 Tank Monitoring IoT (Raspberry Pi Pico W) — IoT Masters
+
+**Pico W + DHT22 + HC-SR04** en MicroPython: temperatura, humedad y nivel de tanque con
+**LED RGB por rangos**, **alerta de tanque < 10 cm** y **bomba simulada controlada desde el
+servidor web** (dashboard en tiempo real, datos cada 5 s).
+
+| Recurso | Ubicación |
+|---|---|
+| 🎬 Video de demostración (2:02) | [`proyecto-tanque-pico-w/video/`](proyecto-tanque-pico-w/video/Tank_Monitoring_Demo.mp4) |
+| 💻 Código (main.py + circuito Wokwi) | [`proyecto-tanque-pico-w/codigo/`](proyecto-tanque-pico-w/codigo) |
+| 📄 Detalle del proyecto | [`proyecto-tanque-pico-w/README.md`](proyecto-tanque-pico-w/README.md) |
+| 🧪 Evidencias de los 8 proyectos guiados (videos ≤30 s) | [`guiados-pico-w/`](guiados-pico-w) |
+
 ## 🧪 Proyectos guiados
 - [`01-blink`](proyectos-guiados/01-blink) — parpadeo de LED.
 - [`02-semaforo`](proyectos-guiados/02-semaforo) — semáforo con temporización.
